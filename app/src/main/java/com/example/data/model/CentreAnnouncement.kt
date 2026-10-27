@@ -1,15 +1,15 @@
 package com.example.data.model
 
 data class CentreAnnouncement(
-    val id: String,
-    val titleEn: String,
-    val titleMr: String,
-    val titleHi: String,
-    val descriptionEn: String,
-    val descriptionMr: String,
-    val descriptionHi: String,
-    val date: String,
-    val category: AnnouncementCategory,
+    val id: String = "",
+    val titleEn: String = "",
+    val titleMr: String = "",
+    val titleHi: String = "",
+    val descriptionEn: String = "",
+    val descriptionMr: String = "",
+    val descriptionHi: String = "",
+    val date: String = "",
+    val category: AnnouncementCategory = AnnouncementCategory.EVENT,
     val isUrgent: Boolean = false
 )
 

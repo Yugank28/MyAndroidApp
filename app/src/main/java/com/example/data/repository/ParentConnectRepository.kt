@@ -19,6 +19,7 @@ import com.example.data.parser.CsvParser
 import com.example.data.parser.SampleDataGenerator
 import com.example.data.remote.GeminiService
 import com.example.data.remote.GrowthSummaryResult
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -60,6 +61,26 @@ class ParentConnectRepositoryImpl(
     private val context: Context,
     private val dao: ChildDao
 ) : ParentConnectRepository {
+
+    private val firestore: FirebaseFirestore? = try {
+        FirebaseFirestore.getInstance()
+    } catch (e: Exception) {
+        null
+    }
+
+    init {
+        try {
+            firestore?.collection("announcements")
+                ?.addSnapshotListener { snapshot, _ ->
+                    if (snapshot != null && !snapshot.isEmpty) {
+                        val list = snapshot.toObjects(CentreAnnouncement::class.java)
+                        if (list.isNotEmpty()) {
+                            _announcements.value = list
+                        }
+                    }
+                }
+        } catch (_: Exception) {}
+    }
 
     private val _currentSession = MutableStateFlow(UserSession())
     override val currentSession: Flow<UserSession> = _currentSession.asStateFlow()
@@ -199,10 +220,18 @@ class ParentConnectRepositoryImpl(
         _rationSchedules.value = current
     }
 
-    override suspend fun dispatchAnnouncement(announcement: CentreAnnouncement) = withContext(Dispatchers.Default) {
-        val current = _announcements.value.toMutableList()
-        current.add(0, announcement)
-        _announcements.value = current
+    override suspend fun dispatchAnnouncement(announcement: CentreAnnouncement) {
+        withContext(Dispatchers.Default) {
+            val current = _announcements.value.toMutableList()
+            current.add(0, announcement)
+            _announcements.value = current
+        }
+
+        try {
+            firestore?.collection("announcements")
+                ?.document(announcement.id)
+                ?.set(announcement)
+        } catch (_: Exception) {}
     }
 
     override suspend fun parseAndValidateUpload(uri: Uri, isExcel: Boolean): DiffImportResult = withContext(Dispatchers.IO) {
