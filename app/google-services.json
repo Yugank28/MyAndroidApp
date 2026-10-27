@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "76097025122",
+    "project_id": "myapp-1e7d7",
+    "storage_bucket": "myapp-1e7d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76097025122:android:6fef6ff904f0d5d5278d3b",
+        "android_client_info": {
+          "package_name": "com.aistudio.poshantracker.kvzwxp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIHRSqZVgggrv87fQbY_HvMuS2N0sFjOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
