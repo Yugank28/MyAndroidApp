@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:translateX="0"
+        android:translateY="0">
+        <!-- Mother & Child Poshan Symbol within safe area 21-87 (66dp) -->
+        <!-- Mother head -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M44,35a6,6 0 1,0 0.01,-0.01Z" />
+        <!-- Child head -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M64,43a5,5 0 1,0 0.01,-0.01Z" />
+        <!-- Protective embracing arms & body -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M33,68c0,-9 7.5,-17 18.5,-17c3.8,0 7.3,1 10.2,3c-3,2 -5,5.6 -5,9.5c0,4 2,8 5.5,10.2c-1.8,0.3 -3.6,0.3 -5.2,0.3c-10,0 -16,-3 -24,-6z" />
+        <!-- Child body held safely -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M56,58c0,-4.5 3.8,-8 8.5,-8s8.5,3.5 8.5,8c0,7 -4,14 -8.5,14s-8.5,-7 -8.5,-14z" />
+        <!-- Growth seedling / leaf sprout at top right showing child progress & health -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M70,30c0,-6 6,-10 10,-10c0,5 -4,10 -10,10z" />
+        <path
+            android:fillColor="#E0F2F1"
+            android:pathData="M78,25c0,-4 4,-7 7,-7c0,3.5 -3,7 -7,7z" />
+        <!-- Healthy child pedestal / nurturing base -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M28,75c6,-2 14,-3 26,-3c12,0 20,1 26,3c1.5,0.5 1.5,2 0,2.5c-7,2 -16,3 -26,3c-10,0 -19,-1 -26,-3c-1.5,-0.5 -1.5,-2 0,-2.5z" />
+    </group>
+</vector>

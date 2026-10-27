@@ -1,0 +1,6 @@
+{
+  "name": "Anganwadi Connect",
+  "description": "Anganwadi Parent Connect - Minimalist Child Growth, Attendance, Rations & Vaccination Monitor with Trilingual Support",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
